@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema web para enviar correos electrónicos con EmailJS">
+  <title>Sistema de Envío de Correos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="logo">✉</div>
+    <div>
+      <h1>Correo Web</h1>
+      <p>Sistema de envío de correos electrónicos</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta">
+      <div class="titulo">
+        <span class="etiqueta">EMAILJS</span>
+        <h2>Enviar un mensaje</h2>
+        <p>Completa los datos para enviar tu correo electrónico.</p>
+      </div>
+
+      <form id="formulario-correo">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input
+            type="text"
+            id="nombre"
+            name="user_name"
+            placeholder="Ingresa tu nombre"
+            minlength="2"
+            maxlength="80"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="correo">Tu correo electrónico</label>
+          <input
+            type="email"
+            id="correo"
+            name="user_email"
+            placeholder="ejemplo@correo.com"
+            maxlength="254"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="destinatario">Correo del destinatario</label>
+          <input
+            type="email"
+            id="destinatario"
+            name="to_email"
+            placeholder="destinatario@correo.com"
+            maxlength="254"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <input
+            type="text"
+            id="asunto"
+            name="subject"
+            placeholder="Asunto del mensaje"
+            minlength="3"
+            maxlength="120"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="message"
+            rows="5"
+            placeholder="Escribe tu mensaje aquí..."
+            minlength="5"
+            maxlength="3000"
+            required
+          ></textarea>
+          <small>Máximo 3000 caracteres.</small>
+        </div>
+
+        <button type="submit" id="boton-enviar">
+          <span id="texto-boton">✉ Enviar correo</span>
+        </button>
+
+        <div id="estado" class="estado" role="status"
+             aria-live="polite" hidden></div>
+      </form>
+
+      <p class="nota">
+        Tu mensaje se procesará mediante el servicio EmailJS.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto académico | Desarrollo Web Full Stack</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --verde: #087443;
+  --verde-oscuro: #065b35;
+  --fondo: #f2f6f4;
+  --texto: #24332b;
+  --borde: #d9e3dc;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  display: flex;
+  flex-direction: column;
+}
+
+.encabezado {
+  background: var(--verde);
+  color: white;
+  padding: 22px 8%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 3px 12px #00000018;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #ffffff20;
+  border-radius: 12px;
+  font-size: 28px;
+}
+
+.encabezado h1 {
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.encabezado p {
+  font-size: 13px;
+  color: #e0f4e8;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 720px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.tarjeta {
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 10px 30px #183b2810;
+}
+
+.etiqueta {
+  display: inline-block;
+  color: var(--verde);
+  background: #e4f5eb;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 7px 10px;
+  border-radius: 6px;
+}
+
+.titulo h2 {
+  font-size: 26px;
+  margin: 16px 0 9px;
+}
+
+.titulo p {
+  color: #6b7970;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+
+.campo {
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 14px;
+  background: #fcfdfc;
+  color: var(--texto);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px #08744318;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.campo small {
+  display: block;
+  color: #718077;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: var(--verde);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: var(--verde-oscuro);
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #8bc9a5;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.estado {
+  margin-top: 18px;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.exito {
+  background: #e5f7eb;
+  color: #176b38;
+  border: 1px solid #b8e6c7;
+}
+
+.error {
+  background: #fff0ef;
+  color: #a32626;
+  border: 1px solid #f3c6c2;
+}
+
+.nota {
+  margin-top: 22px;
+  color: #718077;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #718077;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .encabezado {
+    padding: 18px;
+  }
+
+  .encabezado h1 {
+    font-size: 20px;
+  }
+
+  .contenedor {
+    padding: 24px 14px;
+  }
+
+  .tarjeta {
+    padding: 22px 18px;
+  }
+
+  .titulo h2 {
+    font-size: 23px;
+  }
+}
